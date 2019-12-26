@@ -1,44 +1,65 @@
-// make a function that takes a number as input
-// returns it dubled;
-// const double = (number) => number * 2;
+// make a function that takes a number
+// as imput and returns it doubled;
 
-// console.log(double(4));
 
-// Make a loop that dobble evry number in an array
-// Use the function you made
-
-// const numberArray = [3, 5, 32, 5, 13];
-// const newArray = [];
-
-// Make a function that takes an array as an input
-// and returns every array dubbled
-
-/* function arrayParty(array) {
-  for (let i = 0; i < array.length; i += 1) {
-    const dumb = double(array[i]);
-    newArray.push(dumb);
-  }
-  return newArray;
+function double(x) {
+  const doubled = x * 2;
+  return doubled;
 }
-console.log(arrayParty(numberArray)); */
+console.log(double(5));
 
-// Make a function, similar
-// Two inputs, array and another function
-// Instead of using dubble, use the other function
+// make a loop that doubles every number in an array
 
-const trippel = (number) => number * 3;
+const myArray = [3, 5, 6, 8];
+const newArray = [];
+for (let x = 0; x < myArray.length; x += 1) {
+  const dos = double(myArray[x]);
+  newArray.push(dos);
+}
+console.log(newArray);
 
-function myMap(array, functionNum) {
+// make a function that takes an array as an imput
+// and returns an array with every element doubled
+
+
+function doubledArray(array) {
+  const newArray1 = [];
+  for (let x = 0; x < array.length; x += 1) {
+    const dos = double(array[x]);
+    newArray1.push(dos);
+  }
+  return newArray1;
+}
+console.log(doubledArray(myArray));
+
+
+// a function with two parameters: an array and another function.
+// instead of using double in the loop, we use the other function
+// test the function
+
+function myMap(myArray1, anyFunction) {
   const newArray = [];
-  for (let i = 0; i < array.length; i += 1) {
-    const dumb = functionNum(array[i]);
-    newArray.push(dumb);
+  for (let x = 0; x < myArray1.length; x += 1) {
+    const dos = anyFunction(myArray1[x]);
+    newArray.push(dos);
   }
   return newArray;
 }
-console.log(myMap([5, 2, 6, 7, 8], trippel));
+console.log('before');
+console.log(myMap(myArray, double));
 
+// make a function called triple that triples the number,
+// then use my map with triples
 
-// Make a function called "trippel"
-// That trippel a function
-// and put it inside the myMap
+function triple(x) {
+  const tripled = x * 3;
+  return tripled;
+}
+console.log(myMap(myArray, triple));
+
+// javascript built in function
+console.log('print built in function');
+const lower = (string) => string.toLowerCase();
+const array = ['UIOU', 'GHGJH', 'HKHKJH'];
+const print = array.map(lower);
+console.log(print);
