@@ -4,7 +4,7 @@ const myString = "asdgasg";
 function upperCaseString (string){
     return string.toUpperCase();
 }
-console.log("uppercase function", upperCaseString(myString));
+//console.log("uppercase function", upperCaseString(myString));
 
 
 //make a loop that loops through a string and
@@ -14,7 +14,7 @@ for( let x = 0; x < myString.length; x += 1){
     let y = upperCaseString(myString[x]);
     newString += y;
 }
-console.log("for loop", newString);
+//console.log("for loop", newString);
 
 
 // make a function that takes two imputs a string and another function
@@ -29,6 +29,7 @@ function stringMap (string2, functionb){
     }
     return newString1;
 }
+
 console.log("function func", stringMap(myString, upperCaseString));
 
 function doubleString (string) {
@@ -46,3 +47,5 @@ function addDashToString(string) {
 console.log("test addDashToString(boing)", addDashToString("boing"));
 
 console.log("test stringMap(boing, addDashToString)", stringMap("boing", addDashToString));
+
+module.exports= {stringMap};
